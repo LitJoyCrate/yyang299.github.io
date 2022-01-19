@@ -111,7 +111,7 @@
       }
       
       /* Welcome Popup Configuration START */
-			var welcome_json ='{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[1364,-4952]}}'
+			var welcome_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[896,-4576],[840,-4944],[1280,-5536],[1944,-5200],[1864,-4584],[896,-4576]]]}}'
 			const WELCOME_DATA = {
         img_name : "",
         title : "",
@@ -127,17 +127,17 @@
       }).addTo(map);
 
 			WELCOME.bindPopup(WELCOME_POPUP_HTML);
-      WELCOME.bindTooltip(WELCOME_DATA.label, 
-          {
-              permanent: true, 
-              direction: 'center'
-          }
-      ).openTooltip()
+      // WELCOME.bindTooltip(WELCOME_DATA.label, 
+      //     {
+      //         permanent: true, 
+      //         direction: 'center'
+      //     }
+      // ).openTooltip()
 
 
 			
 			/* YA Popup Configuration START */
-			var YA_subx_json ='{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[4512,-2375.71]}}'
+			var YA_subx_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[3624,-2424],[3472,-3048],[4344,-2944],[4216,-2472],[3624,-2424]]]}}'
 			const YA_DATA = {
         img_name : "img_avatar.png",
         title : "Young Adult Book Subscription",
@@ -153,12 +153,12 @@
       }).addTo(map);
 
 			YA.bindPopup(YA_POPUP_HTML);
-      YA.bindTooltip(YA_DATA.label, 
-          {
-              permanent: true, 
-              direction: 'center'
-          }
-      ).openTooltip()
+      // YA.bindTooltip(YA_DATA.label, 
+      //     {
+      //         permanent: true, 
+      //         direction: 'center'
+      //     }
+      // ).openTooltip()
 
       /* YA Popup Configuration END */
 

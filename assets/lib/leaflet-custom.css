@@ -94,6 +94,18 @@
   border: 2px solid;
 }
 
-.leaflet-control-container{
-  display: none;
+/* ADMIN ONLY CSS START: 
+  Please use this for testing when you add new click area
+  After you make changes, please set to "opacity: 0" and "display: none" */
+.leaflet-marker-icon,
+.leaflet-interactive
+{
+  opacity: 1;
+  /* opacity: 0; */
 }
+
+.leaflet-control-container .leaflet-draw{
+  display: block;
+  /* display: none; */
+}
+/* ADMIN ONLY CSS END */ 
