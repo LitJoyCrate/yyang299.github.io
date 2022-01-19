@@ -80,7 +80,7 @@
 			}
 
       function generatePopupHtmlCode(data) {
-        const { img_name, title, description, subx_btn_url, shop_btn_url } = data;
+        const { img_name, title, description, subx_btn_txt, subx_btn_url, shop_btn_txt, shop_btn_url } = data;
 
         const html_code = `
           ${ img_name ? 
@@ -99,8 +99,8 @@
          ${subx_btn_url || shop_btn_url ? 
           `
             <div class="buttons-wrapper">
-              ${subx_btn_url ? `<a href="${subx_btn_url}">SUBSCRIBE</a>` : ``}
-              ${shop_btn_url ? `<a href="${shop_btn_url}">SHOP</a>` : ``}
+              ${subx_btn_url ? `<a href="${subx_btn_url}">${subx_btn_txt ? subx_btn_txt : 'SUBSCRIBE'}</a>` : ``}
+              ${shop_btn_url ? `<a href="${shop_btn_url}">${subx_btn_txt ? shop_btn_txt : 'SHOP'}</a>` : ``}
             </div>
           ` :
           `` 
@@ -110,39 +110,59 @@
         return html_code;
       }
       
-      /* Welcome Popup Configuration START */
-			var welcome_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[896,-4576],[840,-4944],[1280,-5536],[1944,-5200],[1864,-4584],[896,-4576]]]}}'
-			const WELCOME_DATA = {
-        img_name : "",
-        title : "",
-        description : "",
-        subx_btn_url : "",
-        shop_btn_url : "",
+			/* Template Popup Configuration START */
+			// var welcome_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[2732,-3684],[2484,-4424],[3360,-4588],[3624,-3924],[2732,-3684]]]}}'
+			// const WELCOME_DATA = {
+      //   img_name : "",
+      //   title : "",
+      //   description : "",
+			// 	subx_btn_txt: "",
+      //   subx_btn_url : "",
+			// 	shop_btn_txt: "",
+      //   shop_btn_url : "",
+      //   label: 'Welcome',
+      // }
+      // const WELCOME_POPUP_HTML = generatePopupHtmlCode(WELCOME_DATA);
+
+      // var WELCOME = L.geoJSON(JSON.parse(welcome_json), {
+      //   id: 'welcome',
+      // }).addTo(map);
+
+			// WELCOME.bindPopup(WELCOME_POPUP_HTML);
+			/* Template Popup Configuration END */
+
+			
+			/* Template Popup Configuration START */
+			var magical_json ='{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[1400,-5048]}}'
+			const MAGICAL_DATA = {
+        img_name : "magical_popup.png",
+        title : "Hi, this is Magical",
+        description : "Magical description",
+				subx_btn_txt: "M_SUBSCRIBE",
+        subx_btn_url : "/collections",
+				shop_btn_txt: "SHOPPING",
+        shop_btn_url : "/collections/all",
         label: 'Welcome',
       }
-      const WELCOME_POPUP_HTML = generatePopupHtmlCode(WELCOME_DATA);
+      const MAGICAL_POPUP_HTML = generatePopupHtmlCode(MAGICAL_DATA);
 
-      var WELCOME = L.geoJSON(JSON.parse(welcome_json), {
+      var MAGICAL = L.geoJSON(JSON.parse(magical_json), {
         id: 'welcome',
       }).addTo(map);
 
-			WELCOME.bindPopup(WELCOME_POPUP_HTML);
-      // WELCOME.bindTooltip(WELCOME_DATA.label, 
-      //     {
-      //         permanent: true, 
-      //         direction: 'center'
-      //     }
-      // ).openTooltip()
+			MAGICAL.bindPopup(MAGICAL_POPUP_HTML);
+			/* Template Popup Configuration END */
 
 
-			
 			/* YA Popup Configuration START */
 			var YA_subx_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[3624,-2424],[3472,-3048],[4344,-2944],[4216,-2472],[3624,-2424]]]}}'
 			const YA_DATA = {
         img_name : "img_avatar.png",
         title : "Young Adult Book Subscription",
         description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, et dolore magna aliqua.",
+				subx_btn_txt: "SUB",
         subx_btn_url : "/collections/all",
+				shop_btn_txt : "SHOPPING",
         shop_btn_url : "/collections/all",
         label: 'Lunacorns',
       }

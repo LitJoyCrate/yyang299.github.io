@@ -100,12 +100,12 @@
 .leaflet-marker-icon,
 .leaflet-interactive
 {
-  opacity: 1;
-  /* opacity: 0; */
+  /* opacity: 1; */
+  opacity: 0;
 }
 
 .leaflet-control-container .leaflet-draw{
-  display: block;
-  /* display: none; */
+  /* display: block; */
+  display: none;
 }
 /* ADMIN ONLY CSS END */ 
