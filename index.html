@@ -129,7 +129,37 @@
       // }).addTo(map);
 
 			// WELCOME.bindPopup(WELCOME_POPUP_HTML);
+			
+			
+			
 			/* Template Popup Configuration END */
+			
+			/* Template Popup -TREE Configuration START */
+			 var tree_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[1178.740088,-7629.93404],[961.091781,-7444.265552],[1178.740088,-7341.827917],[1473.205213,-7341.827917],[1652.44511,-7508.289134],[1652.44511,-7789.992997],[1537.219392,-8039.685068],[1293.965805,-8028.4434],[1178.740088,-7629.93404]]]}}'
+			 const tree_data = {
+         img_name : "img_avatar.png",
+         title : "Treeland",
+         description : "Gold Treeland",
+			 	subx_btn_txt: "View",
+         subx_btn_url : "https://litjoycrate.com",
+			 	shop_btn_txt: "View Again",
+         shop_btn_url : "/pages/quarterly-collectibles-checklist",
+         label: 'Welcome',
+       }
+       const tree_html = generatePopupHtmlCode(tree_data);
+
+       var TREE = L.geoJSON(JSON.parse(tree_popup), {
+         id: 'TREE',
+       }).addTo(map);
+
+			 TREE.bindPopup(tree_html);
+			
+			
+			
+			/* Template Popup Configuration END */
+			
+			
+			
 
 			
 			/* Template Popup Configuration START */
